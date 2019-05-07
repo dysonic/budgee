@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "route": "/api/tx-data",
+      "address": "http://localhost:1001"
+    },
+    {
+      "route": "/api/tx-rules",
+      "address": "http://localhost:1002"
+    }
+  ]
+}

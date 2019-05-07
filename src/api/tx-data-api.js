@@ -1,20 +1,25 @@
 const TX_DATA_URL = '/api/tx-data';
 
-export const uploadOfx = (formData) => {
-    console.log('uploadOfx');
-    return window
-        .fetch(`${TX_DATA_URL}/upload`, {
-            method: 'POST',
-            cache: 'no-cache',
-            headers: {
-                'Accept': '*/*',
-                // 'Content-Type': 'multipart/form-data',
-                // 'Accept': 'application/json',
-                //"Content-Type": "application/xml",
-            },
-            body: formData,
-    }).then(response => {
-        return response;
-        // return response.json();
-    });
+const defaultHeaders = {
+    'Accept': 'application/json',
 };
+
+const defaultOptions = {
+    cache: 'no-cache',
+    headers: defaultHeaders,
+}
+
+const postOptions = {
+    ...defaultOptions,
+    method: 'POST',
+};
+
+export const uploadOfx = (formData) => {
+    const options = { 
+        ...postOptions,
+        body: formData,
+    };
+    return fetch(`${TX_DATA_URL}/upload`, options);
+};
+
+export const fetchAllTxData = () => fetch(TX_DATA_URL, defaultOptions);
