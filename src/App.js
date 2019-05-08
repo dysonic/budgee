@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import TxDataListContainer from './containers/TxDataListContainer';
 import UploadContainer from './containers/UploadContainer';
+import RulesListContainer from './containers/RulesListContainer';
 class App extends Component {
   render() {
     return (
@@ -21,6 +22,7 @@ class App extends Component {
         <Route path="/" exact component={Home} />
         <Route path="/txdata" component={TxDataListContainer} />
         <Route path="/txdata/upload" component={UploadContainer} />
+        <Route path="/rules" component={RulesListContainer} />
       </Router>
     );
   }

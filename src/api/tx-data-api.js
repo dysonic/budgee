@@ -1,4 +1,4 @@
-const TX_DATA_URL = '/api/tx-data';
+const TX_DATA_URL = '/tx-data/api/txdata';
 
 const defaultHeaders = {
     'Accept': 'application/json',
