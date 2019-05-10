@@ -1,0 +1,4 @@
+{
+  "/tx-data": "http://localhost:1001",
+  "/tx-rules": "http://localhost:1002"
+}
