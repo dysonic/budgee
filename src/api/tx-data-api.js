@@ -1,4 +1,6 @@
-const TX_DATA_URL = '/tx-data/api/txdata';
+import { getTxDataUrl } from '../config';
+
+const TX_DATA_URL = getTxDataUrl('/api/tx-data');
 
 const defaultHeaders = {
     'Accept': 'application/json',
@@ -23,3 +25,5 @@ export const uploadOfx = (formData) => {
 };
 
 export const fetchAllTxData = () => fetch(TX_DATA_URL, defaultOptions);
+
+export const fetchTxData = id => fetch(`${TX_DATA_URL}/${id}`, defaultOptions);

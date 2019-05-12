@@ -1,4 +1,7 @@
-const TX_RULES_URL = '/tx-rules/api';
+import { getTxRulesUrl } from '../config';
+
+const TX_RULES_URL = getTxRulesUrl('/api/tx-rules');
+
 
 const defaultHeaders = {
     'Accept': 'application/json',

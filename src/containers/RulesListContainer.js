@@ -15,6 +15,12 @@ class UploadContainer extends Component {
     }
 }
 
+const mapStateToProps = ({ txData}) => { 
+    return {
+        txData,
+    }
+}
+
 const mapDispatchToProps = dispatch => {
     return {
         txRulesService: bindActionCreators(txRuleActions, dispatch),
@@ -22,6 +28,6 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(
-    null,
+    mapStateToProps,
     mapDispatchToProps,
 )(UploadContainer);

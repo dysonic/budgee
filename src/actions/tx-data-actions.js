@@ -1,6 +1,7 @@
 import {
   SERVER_ERROR,
   UPLOAD_TX_DATA_SUCCESS,
+  FETCH_TX_DATA_SUCCESS,
   FETCHALL_TX_DATA_SUCCESS,
 } from './action-types';
 import * as txDataApi from '../api/tx-data-api';
@@ -16,6 +17,13 @@ export const serverError = (error) => {
 export const uploadTxDataSuccess = (txData) => {
   return {
     type: UPLOAD_TX_DATA_SUCCESS,
+    txData,
+  };
+}
+
+export const fetchTxDataSuccess = (txData) => {
+  return {
+    type: FETCH_TX_DATA_SUCCESS,
     txData,
   };
 }
@@ -41,6 +49,15 @@ export const fetchAllTxDataAsync = () => {
   return dispatch => {
     return txDataApi.fetchAllTxData().then(r => r.json()).then(
       txDataList => dispatch(uploadTxDataSuccess(txDataList)),
+      error => dispatch(serverError(error))
+    );
+  };
+};
+
+export const fetchTxDataAsync = id => {
+  return dispatch => {
+    return txDataApi.fetchTxData(id).then(r => r.json()).then(
+      txData => dispatch(fetchTxDataSuccess(txData)),
       error => dispatch(serverError(error))
     );
   };

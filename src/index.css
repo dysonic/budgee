@@ -16,3 +16,36 @@ code {
 #root {
   margin: 20px 20px 40px 20px;
 }
+
+/* Typography */
+.header {
+  font-weight: bold;
+}
+
+/* Atomic classes */
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+.d-flex {
+  display: flex;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.tx-data-summary li {
+  display: flex;
+  flex-direction: row;
+}
+
+.tx-data-summary li > span {
+  display: flex;
+  flex-direction: column;
+}
+
+.tx-data-summary li > span:first-child {
+  width: 160px;
+  font-weight: bold;
+}

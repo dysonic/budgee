@@ -1,0 +1,23 @@
+.tx-data-summary li > span {
+    display: flex;
+    flex-direction: column;
+}
+
+.tx-data-assign-form .tx-date {
+    width: 100px
+}
+.tx-data-assign-form li {
+    display: flex;
+}
+
+.tx-data-assign-form .tx-name {
+    width: 200px
+}
+
+.tx-data-assign-form .tx-details {
+    width: 400px
+}
+
+.tx-data-assign-form .tx-date-amount {
+    width: 100px
+}
